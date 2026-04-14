@@ -13,6 +13,7 @@
 	<div>
 		<a href={resolve('/')}>SolCorp</a>
 		<small>&copy;2026 SolCorp. All rights reserved.</small>
+		<!-- svelte-ignore a11y_invalid_attribute -->
 		<a href="javascript:void(0)" onclick={() => scrollUp()}>Back to Top</a>
 	</div>
 </footer>
@@ -26,10 +27,6 @@
 		flex-direction: row;
 		align-items: center;
 		gap: 1rem;
-
-		p {
-			font-size: 2.5rem;
-		}
 	}
 
 	footer {
