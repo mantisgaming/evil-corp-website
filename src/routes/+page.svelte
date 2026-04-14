@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>SolCorp</title>
+</svelte:head>
+
 <section class="jumbotron">
 	<h1>SolCorp</h1>
 	<p>Insert tagline here...</p>
