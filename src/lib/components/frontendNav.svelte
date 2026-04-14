@@ -24,7 +24,7 @@
 <nav>
 	<div>
 		<a href={resolve('/')}
-			><img class="logo" alt="SolCorp Logo" src="" />
+			><img class="logo" alt="SolCorp Logo" src="/favicon.png" />
 			<p>SolCorp</p></a
 		>
 		<ul>
