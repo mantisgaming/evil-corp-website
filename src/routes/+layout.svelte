@@ -11,10 +11,9 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<FrontendNav/>
+<FrontendNav />
 {@render children()}
-<FrontendFooter/>
+<FrontendFooter />
 
 <style lang="scss">
-	
 </style>

@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { resolve } from "$app/paths";
+	import { resolve } from '$app/paths';
 
 	function scrollUp() {
 		window.scrollTo({
 			top: 0,
-			behavior: "smooth"
+			behavior: 'smooth'
 		});
 	}
 </script>
+
 <footer>
 	<div>
-		<a href={resolve("/")}>SolCorp</a>
+		<a href={resolve('/')}>SolCorp</a>
 		<small>&copy;2026 SolCorp. All rights reserved.</small>
 		<a href="javascript:void(0)" onclick={() => scrollUp()}>Back to Top</a>
 	</div>

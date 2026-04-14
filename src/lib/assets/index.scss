@@ -11,16 +11,16 @@ section {
 	justify-content: center;
 	align-items: center;
 
-    background-color: antiquewhite;
+	background-color: antiquewhite;
 
-    > * {
-        width: 100%;
-        max-width: 1200px;
-    }
+	> * {
+		width: 100%;
+		max-width: 1200px;
+	}
 
-    &:nth-child(2n) {
-        background-color: lightcyan;
-    }
+	&:nth-child(2n) {
+		background-color: lightcyan;
+	}
 }
 
 h1 {

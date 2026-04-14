@@ -17,12 +17,12 @@
 
 <style lang="scss">
 	.jumbotron {
-        padding: 7.5rem 0;
+		padding: 7.5rem 0;
 		color: white;
-        position: relative;
-        background-color: unset;
+		position: relative;
+		background-color: unset;
 
-        text-align: center;
+		text-align: center;
 
 		::before {
 			content: '';
@@ -31,12 +31,12 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-image: url('placeholder-banner.jpg');
+			background-image: url('/placeholder-banner.jpg');
 			background-attachment: fixed;
 			background-position: top;
-            background-size: cover;
+			background-size: cover;
 			z-index: -1;
-            filter: blur(1px) brightness(50%);
+			filter: blur(1px) brightness(50%);
 		}
 	}
 </style>
