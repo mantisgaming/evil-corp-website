@@ -1,2 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<section class="jumbotron">
+	<h1>SolCorp</h1>
+	<p>Insert tagline here...</p>
+</section>
+<section>
+    <h2 id="about">About</h2>
+    <p>Insert any information about the company...</p>
+</section>
