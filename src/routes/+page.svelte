@@ -1,7 +1,14 @@
+<script lang="ts">
+	import Header from '$lib/frontend/components/header.svelte';
+	import Footer from '$lib/frontend/components/footer.svelte';
+	import '$lib/frontend/assets/index.scss';
+</script>
+
 <svelte:head>
 	<title>SolCorp</title>
 </svelte:head>
 
+<Header />
 <section class="jumbotron">
 	<h1>SolCorp</h1>
 	<p>Insert tagline here...</p>
@@ -18,6 +25,7 @@
 	<h2 id="another-section">Another Section</h2>
 	<p>Insert any information about the company...</p>
 </section>
+<Footer />
 
 <style lang="scss">
 	.jumbotron {
