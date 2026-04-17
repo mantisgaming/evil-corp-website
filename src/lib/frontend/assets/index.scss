@@ -1,8 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+@import "../../global/style.scss";
 
 section {
 	padding: 5rem 0;
@@ -21,8 +17,4 @@ section {
 	&:nth-child(2n) {
 		background-color: lightcyan;
 	}
-}
-
-h1 {
-	font-size: 5rem;
 }
