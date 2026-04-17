@@ -10,8 +10,16 @@
 
 <Header />
 <section class="jumbotron">
-	<h1>SolCorp</h1>
-	<p>Insert tagline here...</p>
+	<div>
+		<h1>
+			SolCorp
+			<div class="underline" style="--id:1;"></div>
+			<div class="underline" style="--id:0.8;"></div>
+			<div class="underline" style="--id:0.6;"></div>
+			<div class="underline" style="--id:0.4;"></div>
+			<div class="underline" style="--id:0.2;"></div>
+		</h1>
+	</div>
 </section>
 <section>
 	<h2 id="about">About</h2>
@@ -30,25 +38,30 @@
 <style lang="scss">
 	.jumbotron {
 		padding: 7.5rem 0;
-		color: white;
-		position: relative;
-		background-color: unset;
 
-		text-align: center;
+		background-image: url('/banner.jpg');
+		background-position: center;
+		background-size: cover;
 
-		::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background-image: url('/placeholder-banner.jpg');
-			background-attachment: fixed;
-			background-position: top;
-			background-size: cover;
-			z-index: -1;
-			filter: blur(1px) brightness(50%);
+		h1 {
+			font-size: 8rem;
+			display: block;
+			width: fit-content;
+			position: relative;
+
+			.underline {
+				content: '';
+				display: block;
+				position: relative;
+				width: calc(40% + 30% * var(--id));
+				top: -1rem;
+				left: 50%;
+				translate: -50%;
+				height: calc(1px + 5px * var(--id));
+				margin-bottom: calc(8px - 5px * var(--id));
+				background-color: white;
+				opacity: calc(20% + 60% * var(--id));
+			}
 		}
 	}
 </style>
