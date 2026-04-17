@@ -25,7 +25,7 @@
 	<div>
 		<a href={resolve('/')}
 			><img class="logo" alt="SolCorp Logo" src="/favicon.png" />
-			<p>SolCorp</p></a
+			<p class="company-name">SolCorp</p></a
 		>
 		<ul>
 			{#each links as link (link)}
@@ -97,5 +97,13 @@
 				background-color: aqua;
 			}
 		}
+	}
+
+	.company-name {
+		font-family: onyx;
+		letter-spacing: 0.2rem;
+		transform: scaleX(110%);
+  		transform-origin: left;
+		text-transform: uppercase;
 	}
 </style>

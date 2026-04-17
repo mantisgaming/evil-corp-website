@@ -41,7 +41,8 @@
 		width: fit-content;
 		position: relative;
 		display: block;
-		transform: scaleX(110%);
+		transform: scaleX(110%) translateX(-1rem);
+  		transform-origin: left;
 	}
 
 	.underline {
