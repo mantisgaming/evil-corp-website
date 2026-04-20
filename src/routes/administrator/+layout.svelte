@@ -10,6 +10,7 @@
 	var loggedIn = $state(false);
 	var username = $state('');
 	var password = $state('');
+	var error = $state('');
 
 	onMount(() => {
 		username = window.localStorage.getItem('username') ?? '';
@@ -19,6 +20,14 @@
 	});
 
 	function logIn() {
+		username = username.trim();
+
+		if (username == '') {
+			password = '';
+			error = 'No username entered';
+			return;
+		}
+
 		const quoteIndex = password.indexOf("'");
 		const commentIndex = password.indexOf('--');
 
@@ -28,9 +37,17 @@
 
 		const values = sql.split('=');
 
-		if (values.length != 2) return;
+		if (values.length != 2) {
+			password = '';
+			error = 'Authentication Failed';
+			return;
+		}
 
-		if (values[0].trim() !== values[1].trim()) return;
+		if (values[0].trim() !== values[1].trim()) {
+			password = '';
+			error = 'Authentication Failed';
+			return;
+		}
 
 		window.localStorage.setItem('username', username);
 		loggedIn = true;
@@ -62,10 +79,19 @@
 			}}
 		>
 			<label for="username">Username: </label>
-			<input type="text" id="username" bind:value={username} /><br />
+			<input type="text" id="username" bind:value={username} required /><br />
 			<label for="password">Password: </label>
-			<input type="password" id="password" bind:value={password} />
+			<input type="password" id="password" bind:value={password} required /><br />
+			{#if error != ''}
+				<small class="error">{error}</small><br />
+			{/if}
 			<input type="submit" value="Log In" />
 		</form>
 	</section>
 {/if}
+
+<style lang="scss">
+    .error {
+        color: red;
+    }
+</style>
