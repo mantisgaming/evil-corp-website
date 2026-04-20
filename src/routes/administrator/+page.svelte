@@ -1,5 +1,14 @@
 <script lang="ts">
 	import '$lib/backend/assets/index.scss';
+	import { getContext } from 'svelte';
+
+	const {
+		getUsername,
+		logOut
+	}: {
+		getUsername: () => string;
+		logOut: () => void;
+	} = getContext('authentication');
 </script>
 
 <svelte:head>
@@ -9,10 +18,8 @@
 <section>
 	<h1>SolCorp Administration</h1>
 </section>
-<section>
-	<h2 id="login">Log In</h2>
-	<p>TODO: Create login form</p>
-</section>
+<p>Welcome, {getUsername()}</p>
+<button onclick={logOut}>Log Out</button>
 
 <style lang="scss">
 </style>
