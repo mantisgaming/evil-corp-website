@@ -30,7 +30,7 @@
 
 		if (values.length != 2) return;
 
-		if (values[0] !== values[1]) return;
+		if (values[0].trim() !== values[1].trim()) return;
 
 		window.localStorage.setItem('username', username);
 		loggedIn = true;
