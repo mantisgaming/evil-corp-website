@@ -11,34 +11,43 @@
 	var username = $state('');
 	var password = $state('');
 
-    onMount(() => {
-        username = window.localStorage.getItem("username") ?? "";
-        if (username != "") {
-            loggedIn = true;
-        }
-    })
+	onMount(() => {
+		username = window.localStorage.getItem('username') ?? '';
+		if (username != '') {
+			loggedIn = true;
+		}
+	});
 
 	function logIn() {
+		const quoteIndex = password.indexOf("'");
+		const commentIndex = password.indexOf('--');
 
-        // TODO: "Validate" login
+		const sql = password
+			.substring(quoteIndex + 1, commentIndex === -1 ? undefined : commentIndex)
+			.trim();
 
-        window.localStorage.setItem("username", username);
+		const values = sql.split('=');
+
+		if (values.length != 2) return;
+
+		if (values[0] !== values[1]) return;
+
+		window.localStorage.setItem('username', username);
 		loggedIn = true;
-        password = "";
+		password = '';
 	}
 
 	function logOut() {
-        window.localStorage.removeItem("username");
+		window.localStorage.removeItem('username');
 		loggedIn = false;
-        username = "";
-        password = "";
+		username = '';
+		password = '';
 	}
 
-    setContext("authentication", {
-        getUsername: () => username,
-        logOut
-    });
-
+	setContext('authentication', {
+		getUsername: () => username,
+		logOut
+	});
 </script>
 
 {#if loggedIn}
@@ -53,10 +62,10 @@
 			}}
 		>
 			<label for="username">Username: </label>
-			<input type="text" id="username" bind:value={username}/><br/>
+			<input type="text" id="username" bind:value={username} /><br />
 			<label for="password">Password: </label>
-			<input type="password" id="password" bind:value={password}/>
-            <input type="submit" value="Log In" />
+			<input type="password" id="password" bind:value={password} />
+			<input type="submit" value="Log In" />
 		</form>
 	</section>
 {/if}
