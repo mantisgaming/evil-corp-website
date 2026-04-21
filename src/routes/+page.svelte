@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<title>SolCorp</title>
+	<link rel="icon" href="/favicon.png" />
 </svelte:head>
 
 <Header />

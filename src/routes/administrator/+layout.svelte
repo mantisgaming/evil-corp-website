@@ -75,11 +75,17 @@
 	});
 </script>
 
+<svelte:head>
+	<title>SolCorp | Administration</title>
+	<link rel="icon" href="/backend-favicon.png" />
+</svelte:head>
+
 {#if loggedIn}
 	{@render children()}
 {:else}
 	<div class="login-container">
 		<div class="left-section">
+			<img class="logo" alt="SolCorp Logo" src="/backend-favicon.png" /><br />
 			<h1>SolCorp <br /> Administrator <br /> Log In</h1>
 		</div>
 		<div class="right-section">
@@ -121,6 +127,8 @@
 		justify-content: center;
 		align-items: center;
 		padding: 2rem;
+		flex-direction: row;
+		gap: 3rem;
 
 		h1 {
 			font-size: 5rem;

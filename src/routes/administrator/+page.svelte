@@ -14,31 +14,47 @@
 	const menuItems = ['Dashboard', 'Posts', 'Media Library', 'Chat Logs', 'General Settings'];
 
 	const userGroups = [
-        { role: "Administrator", color: "#e74c3c", members: ["Archibald"] },
-        { role: "Moderators", color: "#f1c40f", members: ["Employee #005", "Employee #047"] },
-        { role: "Users", color: "#95a5a6", members: ["Employee #025", "Employee #088", 
-			"Employee #093", "Employee #127", "Employee #152", "Employee #171", 
-			"Employee #202", "Employee #213", "Employee #218", "{Unknown User}"] }
-    ];
+		{ role: 'Administrator', color: '#e74c3c', members: ['Archibald'] },
+		{ role: 'Moderators', color: '#f1c40f', members: ['Employee #005', 'Employee #047'] },
+		{
+			role: 'Users',
+			color: '#95a5a6',
+			members: [
+				'Employee #025',
+				'Employee #088',
+				'Employee #093',
+				'Employee #127',
+				'Employee #152',
+				'Employee #171',
+				'Employee #202',
+				'Employee #213',
+				'Employee #218',
+				'{Unknown User}'
+			]
+		}
+	];
 
 	let chatMessages = $state([
 		{
-			name: "Employee #047",
-			profile: "👤",
-			message: "Keep any conversations like this verbel, and make sure the blueprint is deleted after being up for 24 hours. The less of a trace we leave, the better.",
-			time: "2 hours ago"
+			name: 'Employee #047',
+			profile: '👤',
+			message:
+				'Keep any conversations like this verbel, and make sure the blueprint is deleted after being up for 24 hours. The less of a trace we leave, the better.',
+			time: '2 hours ago'
 		},
 		{
-			name: "Employee #093",
-			profile: "👤",
-			message: "Upload them to the Media Library tab. Don't worry, the public won't be able to see them, only us.",
-			time: "3 hours ago"
+			name: 'Employee #093',
+			profile: '👤',
+			message:
+				"Upload them to the Media Library tab. Don't worry, the public won't be able to see them, only us.",
+			time: '3 hours ago'
 		},
 		{
-			name: "Employee #152",
-			profile: "👤",
-			message: "Where are we storing pieces of blueprints we've found? I was told to put them here in the backend somewhere.",
-			time: "3 hours ago"
+			name: 'Employee #152',
+			profile: '👤',
+			message:
+				"Where are we storing pieces of blueprints we've found? I was told to put them here in the backend somewhere.",
+			time: '3 hours ago'
 		}
 	]);
 
@@ -53,10 +69,10 @@
 			timer1 = setTimeout(() => {
 				chatMessages = [
 					{
-						name: "Employee #218",
-						profile: "👤",
+						name: 'Employee #218',
+						profile: '👤',
 						message: "Who is {Unknown User}? I didn't know we could have invalid names like that.",
-						time: "just now"
+						time: 'just now'
 					},
 					...chatMessages
 				];
@@ -65,10 +81,10 @@
 			timer2 = setTimeout(() => {
 				chatMessages = [
 					{
-						name: "Employee #005",
-						profile: "👤",
+						name: 'Employee #005',
+						profile: '👤',
 						message: "We shouldn't be able to. Someone notify Archibald about this immediately.",
-						time: "just now"
+						time: 'just now'
 					},
 					...chatMessages
 				];
@@ -85,7 +101,12 @@
 
 	function getCurrentDate() {
 		const date = new Date();
-		return date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+		return date.toLocaleDateString('en-US', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
 	}
 </script>
 
@@ -96,6 +117,7 @@
 <div class="admin-container">
 	<aside class="sidebar">
 		<nav>
+			<img class="logo" alt="SolCorp Logo" src="/backend-favicon.png" />
 			{#each menuItems as item}
 				<button
 					class="menu-item"
@@ -116,11 +138,11 @@
 		<div class="welcome-card">
 			<p>Welcome, {'{Unknown User}'}</p>
 		</div>
-		
+
 		{#if activeMenu === 'Chat Logs'}
 			<div class="chat-logs-container">
 				<p class="current-date">{getCurrentDate()}</p>
-				
+
 				<div class="chat-layout-wrapper">
 					<div class="chat-boxes">
 						{#each chatMessages as chat}
@@ -157,6 +179,13 @@
 </div>
 
 <style lang="scss">
+	.logo {
+		height: 3rem;
+		width: 3rem;
+		aspect-ratio: 1/1;
+		margin-bottom: 2rem;
+	}
+
 	.admin-container {
 		display: flex;
 		flex-direction: row;
@@ -179,6 +208,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0;
+			align-items: center;
 		}
 
 		.menu-item {
@@ -191,6 +221,7 @@
 			cursor: pointer;
 			transition: all 0.3s ease;
 			border-left: 4px solid transparent;
+			width: 100%;
 
 			&:hover {
 				background-color: #10301c;
@@ -254,12 +285,12 @@
 			}
 
 			.chat-layout-wrapper {
-				display: flex; 
+				display: flex;
 				flex-direction: row;
 				align-items: flex-start;
 				gap: 2rem;
 				width: 100%;
-        	}
+			}
 
 			.chat-boxes {
 				display: flex;
@@ -321,25 +352,25 @@
 			position: sticky;
 			top: 0;
 
-        .user-group {
-            margin-bottom: 1.5rem;
+			.user-group {
+				margin-bottom: 1.5rem;
 
-            h3 {
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                margin-bottom: 0.5rem;
-                border-bottom: 1px solid #eee;
-                padding-bottom: 0.25rem;
-            }
-        }
+				h3 {
+					font-size: 1.2rem;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					margin-bottom: 0.5rem;
+					border-bottom: 1px solid #eee;
+					padding-bottom: 0.25rem;
+				}
+			}
 
-        .user-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.25rem 0;
-            
+			.user-item {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.25rem 0;
+
 				.user-status-icon {
 					font-size: 0.9rem;
 					opacity: 0.7;
@@ -349,8 +380,8 @@
 					font-size: 1.2rem;
 					color: #2c3e50;
 				}
-        	}
-    	}
+			}
+		}
 	}
 
 	.sidebar .logout-btn {
