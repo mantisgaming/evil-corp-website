@@ -1,0 +1,177 @@
+<script lang="ts">
+	import { onMount, setContext, type Snippet } from 'svelte';
+
+	const {
+		children
+	}: {
+		children: Snippet;
+	} = $props();
+
+	var loggedIn = $state(false);
+	var username = $state('');
+	var password = $state('');
+	var error = $state('');
+
+	onMount(() => {
+		username = window.localStorage.getItem('username') ?? '';
+		if (username != '') {
+			loggedIn = true;
+		}
+	});
+
+	function logIn() {
+		username = username.trim();
+
+		if (username == '') {
+			password = '';
+			error = 'No username entered';
+			return;
+		}
+
+		const quoteIndex = password.indexOf("'");
+		const commentIndex = password.indexOf('--');
+
+		const sql = password
+			.substring(quoteIndex + 1, commentIndex === -1 ? undefined : commentIndex)
+			.trim();
+
+		const values = sql.split('=');
+
+		if (values.length != 2) {
+			password = '';
+			error = 'Authentication Failed';
+			return;
+		}
+
+		if (values[0].trim() !== values[1].trim()) {
+			password = '';
+			error = 'Authentication Failed';
+			return;
+		}
+
+		window.localStorage.setItem('username', username);
+		loggedIn = true;
+		password = '';
+	}
+
+	function logOut() {
+		window.localStorage.removeItem('username');
+		loggedIn = false;
+		username = '';
+		password = '';
+	}
+
+	setContext('authentication', {
+		getUsername: () => username,
+		logOut
+	});
+</script>
+
+{#if loggedIn}
+	{@render children()}
+{:else}
+	<div class="login-container">
+		<div class="left-section">
+			<h1>SolCorp <br> Administrator <br> Log In</h1>
+		</div>
+		<div class="right-section">
+			<h2>Provide Necessary Credentials</h2>
+			<form
+				onsubmit={(e) => {
+					e.preventDefault();
+					logIn();
+				}}
+			>
+				<label for="username">Username: </label>
+				<input type="text" id="username" bind:value={username} required /><br />
+				<label for="password">Password: </label>
+				<input type="password" id="password" bind:value={password} required /><br />
+				{#if error != ''}
+					<small class="error">{error}</small><br />
+				{/if}
+				<input type="submit" value="Log In" />
+			</form>
+		</div>
+	</div>
+{/if}
+
+<style lang="scss">
+	.login-container {
+		display: flex;
+		flex-direction: row;
+		height: 100vh;
+		width: 100vw;
+		margin: 0;
+		padding: 0;
+	}
+
+	.left-section {
+		flex: 1;
+		background-color: #0a1701;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+
+		h1 {
+			font-size: 5rem;
+			text-align: center;
+		}
+	}
+
+	.right-section {
+		flex: 1;
+		background-color: #f0f0f0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+
+		h2 {
+			margin-bottom: 5rem;
+			font-size: 3rem;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			label {
+				font-weight: bold;
+				font-size: 1.5rem
+			}
+
+			input[type="text"],
+			input[type="password"] {
+				padding: 0.5rem;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				font-size: 1.5rem;
+			}
+
+			input[type="submit"] {
+				padding: 0.75rem;
+				background-color: #333333;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 1rem;
+				font-weight: bold;
+
+				&:hover {
+					background-color: #555555;
+				}
+			}
+		}
+	}
+
+	.error {
+		color: red;
+		font-weight: bold;
+		font-size: 1rem
+	}
+</style>
