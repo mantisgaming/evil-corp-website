@@ -25,6 +25,12 @@
             profile: "👤",
             message: "Where are we storing pieces of blueprints we've found? I was told to put them here in the backend somewhere.",
             time: "3 hours ago"
+        },
+        {
+            name: "Employee #088",
+            profile: "👤",
+            message: "I will share iMportant Messages carefully goinG forward. thankS for tElling uS How to use appropriAte measures.",
+            time: "7 hours ago"
         }
     ];
 
