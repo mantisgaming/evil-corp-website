@@ -1,0 +1,1 @@
+<p>New example page at `/administrator/example`</p>

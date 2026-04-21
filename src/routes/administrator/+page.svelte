@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/backend/assets/index.scss';
 	import { getContext, onMount } from 'svelte';
 
 	const {
@@ -43,8 +42,8 @@
 		}
 	]);
 
-	let timer1: NodeJS.Timeout | null = null;
-	let timer2: NodeJS.Timeout | null = null;
+	let timer1: number | null = null;
+	let timer2: number | null = null;
 	let timersStarted = $state(false);
 
 	$effect(() => {

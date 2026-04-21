@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/backend/assets/index.scss';
 	import { onMount, setContext, type Snippet } from 'svelte';
 
 	const {
@@ -59,6 +60,7 @@
 		loggedIn = false;
 		username = '';
 		password = '';
+		error = '';
 	}
 
 	setContext('authentication', {
