@@ -7,7 +7,7 @@
         { role: "Users", color: "#95a5a6", members: ["Employee #025", "Employee #088", "Employee #093", "Employee #127", "Employee #152", "Employee #171", "Employee #202", "Employee #213", "Employee #218", "{Unknown User}"] }
     ];
 
-    let chatMessages = $state([
+    const defaultMessages = [
         {
             name: "Employee #047",
             profile: "👤",
@@ -26,26 +26,41 @@
             message: "Where are we storing pieces of blueprints we've found? I was told to put them here in the backend somewhere.",
             time: "3 hours ago"
         }
-    ]);
+    ];
 
-    let timer1: any;
-    let timer2: any;
+    let chatMessages = $state([...defaultMessages]);
 
     onMount(() => {
-        timer1 = setTimeout(() => {
-            chatMessages = [
-                { name: "Employee #218", 
+
+        const savedChat = window.localStorage.getItem('solcorp_chat_history');
+        if (savedChat) {
+            chatMessages = JSON.parse(savedChat);
+        }
+
+        const addMessageAndSave = (msg: any) => {
+
+            if (!chatMessages.find(m => m.message === msg.message)) {
+                chatMessages = [msg, ...chatMessages];
+                window.localStorage.setItem('solcorp_chat_history', JSON.stringify(chatMessages));
+            }
+        };
+
+        const timer1 = setTimeout(() => {
+            addMessageAndSave({ 
+                name: "Employee #218", 
                 profile: "👤", 
                 message: "Who is {Unknown User}? I didn't know we could have invalid names like that.", 
-                time: "just now" }, ...chatMessages];
+                time: "just now" 
+            });
         }, 15000);
 
-        timer2 = setTimeout(() => {
-            chatMessages = [
-                { name: "Employee #005", 
+        const timer2 = setTimeout(() => {
+            addMessageAndSave({ 
+                name: "Employee #005", 
                 profile: "👤", 
-                message: "We shouldn't be able to. Someone notify Archibald immediately.", 
-                time: "just now" }, ...chatMessages];
+                message: "We shouldn't be able to. Someone notify Archibald about this immediately.", 
+                time: "just now" 
+            });
         }, 20000);
 
         return () => {
@@ -61,7 +76,7 @@
 </script>
 
 <div class="chat-logs-container">
-    <p class="current-date">{getCurrentDate()}</p>
+    <h2 class="current-date">{getCurrentDate()}</h2>
     
     <div class="chat-layout-wrapper">
         <div class="chat-boxes">
@@ -96,8 +111,20 @@
 </div>
 
 <style lang="scss">
+
     .chat-logs-container {
         padding-top: 1rem;
+
+        h2.current-date {
+			color: #2c3e50;
+			margin-top: 0;
+			font-size: 1.5rem;
+		}
+
+		p {
+			color: #7f8c8d;
+			margin-bottom: 0;
+		}
 
         .current-date {
             font-size: 0.95rem;
