@@ -72,7 +72,7 @@
 {:else}
 	<div class="login-container">
 		<div class="left-section">
-			<h1>SolCorp <br> Administrator <br> Log In</h1>
+			<h1>SolCorp <br /> Administrator <br /> Log In</h1>
 		</div>
 		<div class="right-section">
 			<h2>Provide Necessary Credentials</h2>
@@ -141,18 +141,18 @@
 
 			label {
 				font-weight: bold;
-				font-size: 1.5rem
+				font-size: 1.5rem;
 			}
 
-			input[type="text"],
-			input[type="password"] {
+			input[type='text'],
+			input[type='password'] {
 				padding: 0.5rem;
 				border: 1px solid #ccc;
 				border-radius: 4px;
 				font-size: 1.5rem;
 			}
 
-			input[type="submit"] {
+			input[type='submit'] {
 				padding: 0.75rem;
 				background-color: #333333;
 				color: white;
@@ -172,6 +172,6 @@
 	.error {
 		color: red;
 		font-weight: bold;
-		font-size: 1rem
+		font-size: 1rem;
 	}
 </style>

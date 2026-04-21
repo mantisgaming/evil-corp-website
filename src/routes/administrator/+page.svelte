@@ -23,10 +23,10 @@
 	<aside class="sidebar">
 		<nav>
 			{#each menuItems as item}
-				<button 
-					class="menu-item" 
+				<button
+					class="menu-item"
 					class:active={activeMenu === item}
-					onclick={() => activeMenu = item}
+					onclick={() => (activeMenu = item)}
 				>
 					{item}
 				</button>
