@@ -45,11 +45,17 @@
 			.substring(quoteIndex + 1, commentIndex === -1 ? undefined : commentIndex)
 			.trim();
 
-		const values = sql.split('=');
+		if (sql.substring(0, 3).toLowerCase() != 'or ') {
+			password = '';
+			error = 'Server Error';
+			return;
+		}
+
+		const values = sql.substring(3).trim().split('=');
 
 		if (values.length != 2) {
 			password = '';
-			error = 'Authentication Failed';
+			error = 'Server Error';
 			return;
 		}
 
@@ -77,6 +83,11 @@
 		logOut
 	});
 </script>
+
+<svelte:head>
+	<title>SolCorp | Administration</title>
+	<link rel="icon" href="/backend-favicon.png" />
+</svelte:head>
 
 {#if loggedIn}
 	<div class="admin-container">
@@ -111,6 +122,7 @@
 {:else}
 	<div class="login-container">
 		<div class="left-section">
+			<img class="logo" alt="SolCorp Logo" src="/backend-favicon.png" /><br />
 			<h1>SolCorp <br /> Administrator <br /> Log In</h1>
 		</div>
 		<div class="right-section">
@@ -152,6 +164,8 @@
 		justify-content: center;
 		align-items: center;
 		padding: 2rem;
+		flex-direction: row;
+		gap: 3rem;
 
 		h1 {
 			font-size: 5rem;

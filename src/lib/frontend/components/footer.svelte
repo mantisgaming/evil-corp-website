@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 
 	function scrollUp() {
@@ -11,7 +12,10 @@
 
 <footer>
 	<div>
-		<a href={resolve('/administrator')} class="glitch">SolCorp</a>
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<!-- svelte-ignore a11y_missing_attribute -->
+		<a onclick={() => goto('/administrator')} class="glitch">SolCorp</a>
 		<small>&copy;2026 SolCorp. All rights reserved.</small>
 		<!-- svelte-ignore a11y_invalid_attribute -->
 		<a href="javascript:void(0)" onclick={() => scrollUp()}>Back to Top</a>
@@ -110,5 +114,6 @@
 
 	.glitch {
 		animation: glitch 2s infinite cubic-bezier(1, 0, 0, 1); /* Adjust duration/speed as needed */
+		cursor: pointer;
 	}
 </style>
