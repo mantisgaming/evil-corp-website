@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 
 	function scrollUp() {
@@ -11,7 +12,8 @@
 
 <footer>
 	<div>
-		<a href={resolve('/administrator')} class="glitch">SolCorp</a>
+		<!-- svelte-ignore a11y_invalid_attribute -->
+		<a href="javascript:void(0)" onclick={() => goto('/administrator')} class="glitch">SolCorp</a>
 		<small>&copy;2026 SolCorp. All rights reserved.</small>
 		<!-- svelte-ignore a11y_invalid_attribute -->
 		<a href="javascript:void(0)" onclick={() => scrollUp()}>Back to Top</a>
