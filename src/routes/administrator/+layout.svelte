@@ -15,12 +15,12 @@
 	var error = $state('');
 
 	const menuItems = [
-        { name: 'Dashboard', path: '/administrator' },
-        { name: 'Posts', path: '/administrator/posts' },
-        { name: 'Media Library', path: '/administrator/media' },
-        { name: 'Chat Logs', path: '/administrator/chat' },
-        { name: 'General Settings', path: '/administrator/settings' }
-    ];
+		{ name: 'Dashboard', path: '/administrator' },
+		{ name: 'Posts', path: '/administrator/posts' },
+		{ name: 'Media Library', path: '/administrator/media' },
+		{ name: 'Chat Logs', path: '/administrator/chat' },
+		{ name: 'General Settings', path: '/administrator/settings' }
+	];
 
 	onMount(() => {
 		username = window.localStorage.getItem('username') ?? '';
@@ -91,34 +91,30 @@
 
 {#if loggedIn}
 	<div class="admin-container">
-        <aside class="sidebar">
-            <nav>
-                {#each menuItems as item}
-                    <a 
-                        href={item.path} 
-                        class="menu-item" 
-                        class:active={$page.url.pathname === item.path}
-                    >
-                        {item.name}
-                    </a>
-                {/each}
-            </nav>
-            <button class="logout-btn" onclick={logOut}>Log Out</button>
-        </aside>
+		<aside class="sidebar">
+			<nav>
+				{#each menuItems as item}
+					<a href={item.path} class="menu-item" class:active={$page.url.pathname === item.path}>
+						{item.name}
+					</a>
+				{/each}
+			</nav>
+			<button class="logout-btn" onclick={logOut}>Log Out</button>
+		</aside>
 
-        <main class="content">
+		<main class="content">
 			<header class="admin-header">
 				<h1 class="header-title">SolCorp Administration</h1>
 				<div class="welcome-card">
 					<p>Welcome, {'{Unknown User}'}</p>
 				</div>
 			</header>
-			
+
 			<div class="page-content">
-				{@render children()} 
+				{@render children()}
 			</div>
 		</main>
-    </div>
+	</div>
 {:else}
 	<div class="login-container">
 		<div class="left-section">
@@ -141,8 +137,9 @@
 					<small class="error">{error}</small><br />
 				{/if}
 				<div class="form-actions">
-                    <input type="submit" value="Log In" />
-                    <a href="/" class="login-back-btn">Return to Main Site</a>
+					<input type="submit" value="Log In" />
+					<a href="/" class="login-back-btn">Return to Main Site</a>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -194,14 +191,14 @@
 			flex-direction: column;
 			gap: 1rem;
 			width: 100%;
-            max-width: 400px;
+			max-width: 400px;
 
 			.form-actions {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				margin-top: 1rem;
+			}
 
 			label {
 				font-weight: bold;
@@ -232,23 +229,23 @@
 			}
 
 			.login-back-btn {
-                display: block;
-                text-align: center;
-                text-decoration: none;
-                padding: 0.75rem;
-                background-color: transparent;
-                color: #7f8c8d;
-                border: 2px solid #bdc3c7;
-                border-radius: 4px;
-                font-size: 1rem;
-                font-weight: bold;
-                transition: all 0.2s ease;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				padding: 0.75rem;
+				background-color: transparent;
+				color: #7f8c8d;
+				border: 2px solid #bdc3c7;
+				border-radius: 4px;
+				font-size: 1rem;
+				font-weight: bold;
+				transition: all 0.2s ease;
 
-                &:hover {
-                    background-color: #bdc3c7;
-                    color: #2c3e50;
-                }
-            }
+				&:hover {
+					background-color: #bdc3c7;
+					color: #2c3e50;
+				}
+			}
 		}
 	}
 
@@ -259,90 +256,94 @@
 	}
 
 	.admin-container {
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-        width: 100vw;
-    }
-
-    .sidebar {
-        width: 250px;
-        background-color: #0a1701;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 2rem 0;
-
-        .menu-item {
-            color: #ecf0f1;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            display: block;
-            &:hover { background-color: #10301c; }
-            &.active { background-color: #1f462e; }
-        }
-    }
-
-    .content {
-        flex: 1;
-        padding: 2rem;
-        background-color: #ecf0f1;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-
-        .admin-header {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 3rem;
-            min-height: 4rem;
-
-            .header-title {
-                margin: 0;
-                color: #2c3e50;
-                font-size: 5.5rem;
-                text-align: center;
-            }
-
-            .welcome-card {
-                position: absolute;
-                right: 0;
-                top: 10%;
-                transform: translateY(-50%);
-                background-color: transparent;
-                padding: 0;
-
-                p {
-                    margin: 0;
-                    font-size: 1.1rem;
-                    color: #34495e;
-                    font-weight: 500;
-                }
-            }
-        }
-
-        .page-content {
-            flex: 1;
-        }
+		display: flex;
+		flex-direction: row;
+		height: 100vh;
+		width: 100vw;
 	}
 
-    .logout-btn {
-            background-color: #8c1e11;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            
-            text-align: left;
-            padding: 1rem 1.5rem;
-            width: 100%;
-            border-left: 4px solid transparent;
+	.sidebar {
+		width: 250px;
+		background-color: #0a1701;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 2rem 0;
 
-            &:hover { 
-                background-color: #a42213; 
-            }
-        }
+		.menu-item {
+			color: #ecf0f1;
+			text-decoration: none;
+			padding: 1rem 1.5rem;
+			display: block;
+			&:hover {
+				background-color: #10301c;
+			}
+			&.active {
+				background-color: #1f462e;
+			}
+		}
+	}
+
+	.content {
+		flex: 1;
+		padding: 2rem;
+		background-color: #ecf0f1;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+
+		.admin-header {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 3rem;
+			min-height: 4rem;
+
+			.header-title {
+				margin: 0;
+				color: #2c3e50;
+				font-size: 5.5rem;
+				text-align: center;
+			}
+
+			.welcome-card {
+				position: absolute;
+				right: 0;
+				top: 10%;
+				transform: translateY(-50%);
+				background-color: transparent;
+				padding: 0;
+
+				p {
+					margin: 0;
+					font-size: 1.1rem;
+					color: #34495e;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.page-content {
+			flex: 1;
+		}
+	}
+
+	.logout-btn {
+		background-color: #8c1e11;
+		color: white;
+		border: none;
+		cursor: pointer;
+		font-weight: bold;
+		font-size: 1rem;
+
+		text-align: left;
+		padding: 1rem 1.5rem;
+		width: 100%;
+		border-left: 4px solid transparent;
+
+		&:hover {
+			background-color: #a42213;
+		}
+	}
 </style>

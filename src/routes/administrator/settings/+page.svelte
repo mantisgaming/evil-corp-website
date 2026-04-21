@@ -20,11 +20,14 @@
 	{#if !isUnlocked}
 		<div class="restricted-section">
 			<h2>Access Restricted</h2>
-			<p>User is lacking in permissions. Can bypass this with a password provided by Moderator or Administrator.</p>
-			
+			<p>
+				User is lacking in permissions. Can bypass this with a password provided by Moderator or
+				Administrator.
+			</p>
+
 			<div class="password-box">
-				<input 
-					type="password" 
+				<input
+					type="password"
 					bind:value={password}
 					placeholder="Enter password"
 					onkeydown={(e) => {

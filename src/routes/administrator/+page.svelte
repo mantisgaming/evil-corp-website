@@ -16,14 +16,14 @@
 	];
 
 	function getCurrentDate() {
-        const date = new Date();
-        return date.toLocaleDateString('en-US', { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        });
-    }
+		const date = new Date();
+		return date.toLocaleDateString('en-US', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
+	}
 </script>
 
 <svelte:head>
@@ -32,8 +32,8 @@
 
 <div class="dashboard-container">
 	<div class="dashboard-header">
-        <h2 class="current-date">{getCurrentDate()}</h2>
-    </div>
+		<h2 class="current-date">{getCurrentDate()}</h2>
+	</div>
 	<div class="analytics-grid">
 		{#each analytics as item}
 			<div class="analytics-card">
@@ -52,7 +52,13 @@
 		<div class="activity-list">
 			{#each recentActivity as activity}
 				<div class="activity-item">
-					<div class="activity-icon {activity.action.includes('logged in') ? 'login' : activity.action.includes('logged out') ? 'logout' : 'action'}">
+					<div
+						class="activity-icon {activity.action.includes('logged in')
+							? 'login'
+							: activity.action.includes('logged out')
+								? 'logout'
+								: 'action'}"
+					>
 						{activity.icon}
 					</div>
 					<div class="activity-details">
