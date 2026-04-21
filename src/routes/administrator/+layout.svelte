@@ -140,7 +140,9 @@
 				{#if error != ''}
 					<small class="error">{error}</small><br />
 				{/if}
-				<input type="submit" value="Log In" />
+				<div class="form-actions">
+                    <input type="submit" value="Log In" />
+                    <a href="/" class="login-back-btn">Return to Main Site</a>
 			</form>
 		</div>
 	</div>
@@ -191,6 +193,15 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
+			width: 100%;
+            max-width: 400px;
+
+			.form-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
 
 			label {
 				font-weight: bold;
@@ -219,6 +230,25 @@
 					background-color: #555555;
 				}
 			}
+
+			.login-back-btn {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                padding: 0.75rem;
+                background-color: transparent;
+                color: #7f8c8d;
+                border: 2px solid #bdc3c7;
+                border-radius: 4px;
+                font-size: 1rem;
+                font-weight: bold;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background-color: #bdc3c7;
+                    color: #2c3e50;
+                }
+            }
 		}
 	}
 

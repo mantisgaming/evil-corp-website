@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     let mediaItemsList = $state([
         {
             title: "Invention Blueprint - Fragment #2",
