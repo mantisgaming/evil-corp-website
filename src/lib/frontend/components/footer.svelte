@@ -35,7 +35,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		padding: 1rem 0;
+		padding: 1rem 3rem;
 		background-color: aquamarine;
 
 		& > div {
@@ -45,19 +45,70 @@
 			align-items: center;
 			width: 100%;
 			max-width: 1200px;
+			gap: 0.5rem;
+
+			@media screen and (width < 500px) {
+				flex-direction: column;
+			}
 		}
 	}
 
 	@keyframes glitch {
-        0% { transform: translate(0); text-shadow: 0 0 0 #000; }
-        20% { transform: translate(-2px, 2px); text-shadow: -2px 2px 0 red; }
-        40% { transform: translate(-2px, -2px); text-shadow: 2px -2px 0 blue; }
-        60% { transform: translate(2px, 2px); text-shadow: -2px 2px 0 green; }
-        80% { transform: translate(2px, -2px); text-shadow: 2px -2px 0 purple; }
-        100% { transform: translate(0); text-shadow: 0 0 0 #000; }
-    }
+		5% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		10% {
+			transform: translate(-3px, 1px);
+			text-shadow: -3px 1px 0 red;
+		}
+		15% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		35% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		40% {
+			transform: translate(-3px, -1px);
+			text-shadow: 3px -1px 0 blue;
+		}
+		45% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		50% {
+			transform: translate(3px, 1px);
+			text-shadow: -3px 1px 0 green;
+		}
+		55% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		75% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		80% {
+			transform: translate(3px, -1px);
+			text-shadow: 3px -1px 0 purple;
+		}
+		85% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+		80% {
+			transform: translate(-3px, -1px);
+			text-shadow: -3px -1px 0 yellow;
+		}
+		95% {
+			transform: translate(0);
+			text-shadow: 0 0 0 #000;
+		}
+	}
 
-    .glitch {
-        animation: glitch 2s infinite; /* Adjust duration/speed as needed */
-    }
+	.glitch {
+		animation: glitch 2s infinite cubic-bezier(1, 0, 0, 1); /* Adjust duration/speed as needed */
+	}
 </style>
