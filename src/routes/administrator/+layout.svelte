@@ -36,17 +36,17 @@
 			.substring(quoteIndex + 1, commentIndex === -1 ? undefined : commentIndex)
 			.trim();
 
-		if (sql.substring(0, 2).toLowerCase() != 'or') {
+		if (sql.substring(0, 3).toLowerCase() != 'or ') {
 			password = '';
-			error = 'Authentication Failed';
+			error = 'Server Error';
 			return;
 		}
 
-		const values = sql.substring(2).trim().split('=');
+		const values = sql.substring(3).trim().split('=');
 
 		if (values.length != 2) {
 			password = '';
-			error = 'Authentication Failed';
+			error = 'Server Error';
 			return;
 		}
 
