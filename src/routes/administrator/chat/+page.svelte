@@ -24,13 +24,6 @@
 
 	const defaultMessages = [
 		{
-			name: 'Employee #152',
-			profile: '👤',
-			message:
-				'I will share iMportant Messages carefully goinG forward. thankS for tElling uS How to use appropriAte measures.',
-			time: '2 hours ago'
-		},
-		{
 			name: 'Employee #047',
 			profile: '👤',
 			message:

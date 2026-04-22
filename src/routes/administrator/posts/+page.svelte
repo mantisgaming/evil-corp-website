@@ -4,22 +4,15 @@
 			title: 'IMPORTANT ANNOUNCEMENT - REGARD WITH CARE',
 			author: 'Archibald Geyser',
 			content:
-				'Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy problems that plague our world. He strives to create a world in which clean energy is provided to everybody. He believes all should be empowered to do what they want to do. A company that incorporates such honesty and integrity, prioritizing these core values above all else — Archibald strives to create such a company. We, as a company, value sustainability and innovation. Our mission to allow all people of the world to benefit from clean energy has never been more important, with clean energy becoming more rare with time. The technologies that we aim to create allow for such opportunities that otherwise may never come to pass. Know that we respect people of all backgrounds, and expect to be held accountable for our actions. We aim for the betterment of all people.',
+				'hello, evEryone is doinG a gOod Job. haPpy day off, Go reSt and enJoy yourselves! Please eXplore our Free excitingG new Help and acTivity paGE. i Like Just  sPending  free time parKing on oPen roads And watcHing caRs rAce by. drinK lots of watEr aNd have a Quiet evening, and a grab a Jacket in case rain faLls. I Need a HaNd helPinG savE files befoRe everyBody leaves toNight For the long weekend, so Answer Quickly. SPend your eXtra time well!',
 			date: '2 hours ago'
 		},
 		{
 			title: 'Plans For SolCorp Expansion',
 			author: 'Employee #005',
 			content:
-				'Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy problems that plague our world. He strives to create a world in which clean energy is provided to everybody. He believes all should be empowered to do what they want to do. A company that incorporates such honesty and integrity, prioritizing these core values above all else — Archibald strives to create such a company. We, as a company, value sustainability and innovation. Our mission to allow all people of the world to benefit from clean energy has never been more important, with clean energy becoming more rare with time. The technologies that we aim to create allow for such opportunities that otherwise may never come to pass. Know that we respect people of all backgrounds, and expect to be held accountable for our actions. We aim for the betterment of all people.',
+				'How does this sound for the website?\n"Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy problems that plague our world. He strives to create a world in which clean energy is provided to everybody. He believes all should be empowered to do what they want to do. A company that incorporates such honesty and integrity, prioritizing these core values above all else — Archibald strives to create such a company. We, as a company, value sustainability and innovation. Our mission to allow all people of the world to benefit from clean energy has never been more important, with clean energy becoming more rare with time. The technologies that we aim to create allow for such opportunities that otherwise may never come to pass. Know that we respect people of all backgrounds, and expect to be held accountable for our actions. We aim for the betterment of all people."\nLet me know if you have any feedback!',
 			date: '5 hours ago'
-		},
-		{
-			title: 'Weekly SolCorp Log',
-			author: 'Employee #093',
-			content:
-				'Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy problems that plague our world. He strives to create a world in which clean energy is provided to everybody. He believes all should be empowered to do what they want to do. A company that incorporates such honesty and integrity, prioritizing these core values above all else — Archibald strives to create such a company. We, as a company, value sustainability and innovation. Our mission to allow all people of the world to benefit from clean energy has never been more important, with clean energy becoming more rare with time. The technologies that we aim to create allow for such opportunities that otherwise may never come to pass. Know that we respect people of all backgrounds, and expect to be held accountable for our actions. We aim for the betterment of all people.',
-			date: 'Yesterday'
 		}
 	]);
 
