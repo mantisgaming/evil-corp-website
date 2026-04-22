@@ -23,55 +23,73 @@
 	];
 
 	onMount(() => {
-		username = window.localStorage.getItem('username') ?? '';
+		username = window.localStorage.getItem('loggedIn') ?? '';
 		if (username != '') {
 			loggedIn = true;
 		}
 	});
 
 	function logIn() {
-		username = username.trim();
+		var pass = false;
 
-		if (username == '') {
+		try {
+			if (username.indexOf("'") !== -1)
+				pass = sqlInjectionCheck(username);
+		} catch (e: any) {
+			const err = e as Error;
 			password = '';
-			error = 'No username entered';
+			error = err.message;
 			return;
 		}
 
-		const quoteIndex = password.indexOf("'");
-		const commentIndex = password.indexOf('--');
+		try {
+			if (password.indexOf("'") !== -1 && !pass)
+				pass = sqlInjectionCheck(password);
+		} catch (e: any) {
+			const err = e as Error;
+			password = '';
+			error = err.message;
+			return;
+		}
 
-		const sql = password
+		if (!pass) {
+			error = 'Invalid username/password';
+			password = '';
+			return;
+		}
+
+		window.localStorage.setItem('loggedIn', "true");
+		loggedIn = true;
+		password = '';
+	}
+
+	function sqlInjectionCheck(input: string) {
+		const quoteIndex = input.indexOf("'");
+		const commentIndex = input.indexOf('--');
+
+		const sql = input
 			.substring(quoteIndex + 1, commentIndex === -1 ? undefined : commentIndex)
 			.trim();
 
 		if (sql.substring(0, 3).toLowerCase() != 'or ') {
-			password = '';
-			error = 'Server Error';
-			return;
+			throw new Error('Server Error');
 		}
 
 		const values = sql.substring(3).trim().split('=');
 
 		if (values.length != 2) {
-			password = '';
-			error = 'Server Error';
-			return;
+			throw new Error('Server Error');
 		}
 
 		if (values[0].trim() !== values[1].trim()) {
-			password = '';
-			error = 'Authentication Failed';
-			return;
+			throw new Error('Authentication Failed');
 		}
 
-		window.localStorage.setItem('username', username);
-		loggedIn = true;
-		password = '';
+		return true;
 	}
 
 	function logOut() {
-		window.localStorage.removeItem('username');
+		window.localStorage.removeItem('loggedIn');
 		loggedIn = false;
 		username = '';
 		password = '';
@@ -79,7 +97,6 @@
 	}
 
 	setContext('authentication', {
-		getUsername: () => username,
 		logOut
 	});
 </script>
@@ -130,9 +147,9 @@
 				}}
 			>
 				<label for="username">Username: </label>
-				<input type="text" id="username" bind:value={username} required /><br />
+				<input type="text" id="username" bind:value={username} /><br />
 				<label for="password">Password: </label>
-				<input type="password" id="password" bind:value={password} required /><br />
+				<input type="password" id="password" bind:value={password} /><br />
 				{#if error != ''}
 					<small class="error">{error}</small><br />
 				{/if}
