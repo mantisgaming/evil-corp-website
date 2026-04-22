@@ -33,8 +33,7 @@
 		var pass = false;
 
 		try {
-			if (username.indexOf("'") !== -1)
-				pass = sqlInjectionCheck(username);
+			if (username.indexOf("'") !== -1) pass = sqlInjectionCheck(username);
 		} catch (e: any) {
 			const err = e as Error;
 			password = '';
@@ -43,8 +42,7 @@
 		}
 
 		try {
-			if (password.indexOf("'") !== -1 && !pass)
-				pass = sqlInjectionCheck(password);
+			if (password.indexOf("'") !== -1 && !pass) pass = sqlInjectionCheck(password);
 		} catch (e: any) {
 			const err = e as Error;
 			password = '';
@@ -58,9 +56,10 @@
 			return;
 		}
 
-		window.localStorage.setItem('loggedIn', "true");
+		window.localStorage.setItem('loggedIn', 'true');
 		loggedIn = true;
 		password = '';
+		error = '';
 	}
 
 	function sqlInjectionCheck(input: string) {
