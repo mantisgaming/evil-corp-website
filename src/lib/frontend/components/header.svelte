@@ -34,7 +34,7 @@
 		align-items: center;
 		width: 100%;
 		padding: 1rem 3rem;
-		background-color: aquamarine;
+		background-color: #91ee95;
 
 		& > div {
 			display: flex;

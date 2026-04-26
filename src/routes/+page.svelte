@@ -37,9 +37,10 @@
 		the betterment of all people.
 	</p>
 </section>
+<img src="/corporate-photo-2.png" width="100%" alt="Generic corporate" style="display: block;" />
 <section>
 	<div class="side-by-side">
-		<div>
+		<div style="flex-grow: 1;">
 			<h2 id="another-section">Another Section</h2>
 			<p>
 				Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy
@@ -54,37 +55,52 @@
 				accountable for our actions. We aim for the betterment of all people.
 			</p>
 		</div>
-		<div>
-			<h2 id="another-section">Another Section</h2>
-			<p>
-				Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy
-				problems that plague our world. He strives to create a world in which clean energy is
-				provided to everybody. He believes all should be empowered to do what they want to do. A
-				company that incorporates such honesty and integrity, prioritizing these core values above
-				all else — Archibald strives to create such a company. We, as a company, value
-				sustainability and innovation. Our mission to allow all people of the world to benefit from
-				clean energy has never been more important, with clean energy becoming more rare with time.
-				The technologies that we aim to create allow for such opportunities that otherwise may never
-				come to pass. Know that we respect people of all backgrounds, and expect to be held
-				accountable for our actions. We aim for the betterment of all people.
-			</p>
+		<div style="flex-grow: 1;">
+			<img src="/corporate-photo-1.png" alt="Generic corporate" style="width: 100%;" />
 		</div>
 	</div>
 </section>
 <section>
-	<h2 id="another-section">Another Section</h2>
-	<p>
-		Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy
-		problems that plague our world. He strives to create a world in which clean energy is provided
-		to everybody. He believes all should be empowered to do what they want to do. A company that
-		incorporates such honesty and integrity, prioritizing these core values above all else —
-		Archibald strives to create such a company. We, as a company, value sustainability and
-		innovation. Our mission to allow all people of the world to benefit from clean energy has never
-		been more important, with clean energy becoming more rare with time. The technologies that we
-		aim to create allow for such opportunities that otherwise may never come to pass. Know that we
-		respect people of all backgrounds, and expect to be held accountable for our actions. We aim for
-		the betterment of all people.
-	</p>
+	<h2 id="another-section">Environment-Conscious</h2>
+	<p>Here at SolCorp, we value the environment. All of our products push the limits of ecological sustainability. Use our products to take a stand and do your part for the future of the world.</p>
+	<div class="side-by-side always" style="align-items: center; margin-top: 1rem;">
+		<div style="flex-basis: 30%;">
+			<img src="/corporate-photo-3.png" alt="Generic corporate" style="width: 100%;" />
+		</div>
+		<div style="flex-basis: 30%;">
+			<img src="/corporate-photo-4.png" alt="Generic corporate" style="width: 100%;" />
+		</div>
+		<div style="flex-basis: 30%;">
+			<img src="/corporate-photo-5.png" alt="Generic corporate" style="width: 100%;" />
+		</div>
+	</div>
+</section>
+<section>
+	<h2 id="another-section">Products</h2>
+	<div class="side-by-side always" style="align-items: center; margin-top: 1rem;">
+		<div style="flex-basis: 45%;">
+			<img src="/product-4.png" alt="Product" style="width: 100%;" />
+			<h3>SolPhone</h3>
+		</div>
+		<div style="flex-basis: 45%;">
+			<img src="/product-5.png" alt="Product" style="width: 100%;" />
+			<h3>SolBike</h3>
+		</div>
+	</div>
+	<div class="side-by-side always" style="align-items: center; margin-top: 1rem;">
+		<div style="flex-basis: 30%;">
+			<img src="/product-1.png" alt="Product" style="width: 100%;" />
+			<h3>SolShirt (Style 1)</h3>
+		</div>
+		<div style="flex-basis: 30%;">
+			<img src="/product-2.png" alt="Product" style="width: 100%;" />
+			<h3>SolShirt (Style 2)</h3>
+		</div>
+		<div style="flex-basis: 30%;">
+			<img src="/product-3.png" alt="Product" style="width: 100%;" />
+			<h3>SolMug</h3>
+		</div>
+	</div>
 </section>
 <Footer />
 
@@ -170,8 +186,10 @@
 		justify-content: space-between;
 		align-items: start;
 
-		@media screen and (width < 900px) {
-			flex-direction: column;
+		&:not(.always) {
+			@media screen and (width < 900px) {
+				flex-direction: column;
+			}
 		}
 	}
 </style>

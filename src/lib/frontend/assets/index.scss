@@ -1,20 +1,18 @@
 @use '../../global/style.scss';
 
+:root {
+	background-color: #e0e0e0;
+}
+
 section {
-	padding: 5rem 3rem;
+	padding: 3rem 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	background-color: antiquewhite;
-
 	> * {
 		width: 100%;
 		max-width: 1200px;
-	}
-
-	&:nth-child(2n) {
-		background-color: lightcyan;
 	}
 }
