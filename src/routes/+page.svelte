@@ -41,7 +41,7 @@
 <section>
 	<div class="side-by-side">
 		<div style="flex-grow: 1;">
-			<h2 id="another-section">Another Section</h2>
+			<h2 id="another-section">We Are the Future</h2>
 			<p>
 				Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy
 				problems that plague our world. He strives to create a world in which clean energy is
