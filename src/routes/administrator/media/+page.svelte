@@ -1,10 +1,11 @@
 <script lang="ts">
 	let mediaItemsList = $state([
 		{
-			title: 'Invention Blueprint - Fragment #2',
+			title: 'Uncovered Blueprint Piece',
 			postedBy: 'Employee #152',
 			time: '2 hours ago',
-			imageUrl: '/temp_bike_image.jpg',
+			imageUrl: '/gNuWqUUaSD.png',
+			link: 'https://users.wpi.edu/~lwjohnson/gNuWqUUaSD.html',
 			description:
 				'The most recent blueprint piece found by faculty. Will be deleted soon, so make sure to download and preserve.'
 		}
@@ -39,7 +40,9 @@
 						<img src={item.imageUrl} alt={item.title} />
 					</div>
 					<div class="media-info">
-						<h3>{item.title}</h3>
+						<h3>
+							<a href={item.link} target="_blank" class="title-link">{item.title}</a>
+						</h3>
 						<p class="media-meta">Posted by <strong>{item.postedBy}</strong> • {item.time}</p>
 						<p class="media-description">{item.description}</p>
 					</div>
