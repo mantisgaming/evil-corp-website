@@ -27,7 +27,7 @@
 			name: 'Employee #047',
 			profile: '👤',
 			message:
-				'Keep any conversations like this verbel, and make sure the blueprint is deleted after being up for 24 hours. The less of a trace we leave, the better.',
+				'Keep any conversations like this verbal, and make sure the blueprint is deleted after being up for 24 hours. The less of a trace we leave, the better.',
 			time: '2 hours ago'
 		},
 		{

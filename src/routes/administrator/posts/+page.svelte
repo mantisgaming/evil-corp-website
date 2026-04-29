@@ -8,7 +8,7 @@
 			date: '2 hours ago'
 		},
 		{
-			title: 'Plans For SolCorp Expansion',
+			title: 'Proposed Website Edit',
 			author: 'Employee #005',
 			content:
 				'How does this sound for the updated website?\n"Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy problems that plague our world. He strives to create a world in which clean energy is provided to everybody. He believes all should be empowered to do what they want to do. A company that incorporates such honesty and integrity, prioritizing these core values above all else — Archibald strives to create such a company. We, as a company, value sustainability and innovation. Our mission to allow all people of the world to benefit from clean energy has never been more important, with clean energy becoming more rare with time. The technologies that we aim to create allow for such opportunities that otherwise may never come to pass. Know that we respect people of all backgrounds, and expect to be held accountable for our actions. We aim for the betterment of all people."\nLet me know if you have any feedback!',

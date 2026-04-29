@@ -18,8 +18,7 @@
 		{ name: 'Dashboard', path: '/administrator' },
 		{ name: 'Posts', path: '/administrator/posts' },
 		{ name: 'Media Library', path: '/administrator/media' },
-		{ name: 'Chat Logs', path: '/administrator/chat' },
-		{ name: 'General Settings', path: '/administrator/settings' }
+		{ name: 'Chat Logs', path: '/administrator/chat' }
 	];
 
 	onMount(() => {
