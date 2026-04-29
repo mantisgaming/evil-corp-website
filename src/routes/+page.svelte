@@ -43,16 +43,17 @@
 		<div style="flex-grow: 1;">
 			<h2 id="another-section">We Are the Future</h2>
 			<p>
-				Our corporation was founded by our CEO Archibald Geyser in response to the horrific energy
-				problems that plague our world. He strives to create a world in which clean energy is
-				provided to everybody. He believes all should be empowered to do what they want to do. A
-				company that incorporates such honesty and integrity, prioritizing these core values above
-				all else — Archibald strives to create such a company. We, as a company, value
-				sustainability and innovation. Our mission to allow all people of the world to benefit from
-				clean energy has never been more important, with clean energy becoming more rare with time.
-				The technologies that we aim to create allow for such opportunities that otherwise may never
-				come to pass. Know that we respect people of all backgrounds, and expect to be held
-				accountable for our actions. We aim for the betterment of all people.
+				For years, massive corporations have been making false promises to the masses, claiming to
+				want a cleaner, healthier future for all. Here at SolCorp, we don't work towards a better
+				future; we are the future. Rather than a rushed, cheaply constructed product, we take a
+				gradual process to ensure premium, eco-friendly results that our customers are satisfied
+				with. Our cutting-edge automation process and prioritization of waste reduction systems
+				maximize efficiency while minimizing environmental impact. Our partners worldwide have
+				already reported a massive decline in rates of environmental pollution and a decrease in the
+				average carbon footprint. With the dedication of our workers and help from the community, we
+				can shape a world powered by progress, starting today. If you wish to support us, feel free
+				to view our products and merchandise towards the bottom of the page. A purchase towards us
+				is advancement for you.
 			</p>
 		</div>
 		<div style="flex-grow: 1;">
@@ -62,7 +63,10 @@
 </section>
 <section>
 	<h2 id="another-section">Environment-Conscious</h2>
-	<p>Here at SolCorp, we value the environment. All of our products push the limits of ecological sustainability. Use our products to take a stand and do your part for the future of the world.</p>
+	<p>
+		Here at SolCorp, we value the environment. All of our products push the limits of ecological
+		sustainability. Use our products to take a stand and do your part for the future of the world.
+	</p>
 	<div class="side-by-side always" style="align-items: center; margin-top: 1rem;">
 		<div style="flex-basis: 30%;">
 			<img src="/corporate-photo-3.png" alt="Generic corporate" style="width: 100%;" />
